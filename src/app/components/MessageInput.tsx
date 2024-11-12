@@ -1,9 +1,16 @@
 // components/MessageInput.js
 
 import Image from "next/image";
+import { SetStateAction } from "react";
 import MaskedInput from "react-text-mask";
 
-export default function MessageInput({ num, setNum, onSend }) {
+interface MessageInputProps{
+  num: string
+  setNum: React.Dispatch<SetStateAction<string>>
+  onSend: ()=> void
+}
+
+export default function MessageInput({ num, setNum, onSend }: MessageInputProps) {
   return (
     <div className="w-full flex px-2 bg-transparent py-0">
       <div className="flex items-center mt-4 p-2 rounded-full shadow-md m-2 w-full sticky bottom-0 z-10 bg-white">

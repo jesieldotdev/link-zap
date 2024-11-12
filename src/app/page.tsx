@@ -1,14 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import ChatMessage from "./components/ChatMessage";
 import ChatHeader from "./components/ChatHeader";
 import MessageInput from "./components/MessageInput";
-import PrivacyPolicy from "./components/PrivacyPolicy";
 
 export default function Home() {
-  const [num, setNum] = useState("55");
-  const [chat, setChat] = useState([]);
+  const [num, setNum] = useState<string>("55");
+  const [chat, setChat] = useState<ReactNode[]>([]);
 
   function gerar() {
     const num_no_space = num.replace(/\s+/g, '');
@@ -40,29 +39,26 @@ export default function Home() {
     }
   }
 
-useEffect(()=>{
-  setChat((prevChat) => [
-        
-        <ChatMessage  message="Digite o número na caixa de texto abaixo e será gerado um link com o número." type="error" />,
-        <ChatMessage message="Informamos que os dados que você insere em nosso aplicativo não serão armazenados em nossos servidores. Eles são processados temporariamente para gerar o link desejado e, em seguida, descartados." type="" />
-      ]);
-},[])
+  useEffect(() => {
+    setChat((prevChat) => [
+      <ChatMessage key={prevChat.length} message="Digite o número na caixa de texto abaixo e será gerado um link com o número." type="error" />,
+      <ChatMessage key={prevChat.length + 1} message="Informamos que os dados que você insere em nosso aplicativo não serão armazenados em nossos servidores. Eles são processados temporariamente para gerar o link desejado e, em seguida, descartados." type="" />
+    ]);
+  }, []);
+
   return (
     <div className="flex flex-col h-screen items-center bg-gray-50 bg-cover bg-center" style={{ backgroundImage: "url('https://i.imgur.com/Yh5JpYQ.jpeg')" }}>
       <ChatHeader />
 
-      <main className="flex flex-col w-full mt-0 rounded-lg  p-4 overflow-y-auto h-full max-h-[75vh]"
-      >
+      <main className="flex flex-col w-full mt-0 rounded-lg p-4 overflow-y-auto h-full max-h-[75vh]">
         {chat.map((message, index) => (
-          <div key={index} className="flex ">
+          <div key={index} className="flex">
             {message}
           </div>
         ))}
-    
-     
       </main>
 
-     <MessageInput num={num} setNum={setNum} onSend={gerar} />
+      <MessageInput num={num} setNum={setNum} onSend={gerar} />
     </div>
   );
 }

@@ -1,7 +1,9 @@
+import React from "react";
+
 // components/ChatMessage.js
 interface ChatMessageProps{
-  message: any 
-  type: "error" | "link" | ""
+  message: React.ReactNode 
+  type?: "error" | "link" | ""
   isUser?: boolean
 }
 

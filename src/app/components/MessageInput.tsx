@@ -15,7 +15,7 @@ export default function MessageInput({ num, setNum, onSend }: MessageInputProps)
     <div className="w-full flex px-2 bg-transparent py-0">
       <div className="flex items-center mt-4 p-2 rounded-full shadow-md m-2 w-full sticky bottom-0 z-10 bg-white">
         <MaskedInput
-          mask={['(', /[0-9]/, /[0-9]/, ')', ' ', /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, '-', /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/]}
+          mask={['(', /[0-9]/, /[0-9]/, ')', ' ', /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, '-', /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/]}
           placeholder="Digite o número"
           type="text"
           value={num}

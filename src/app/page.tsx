@@ -10,7 +10,7 @@ export default function Home() {
   const [chat, setChat] = useState<ReactNode[]>([]);
 
   function gerar() {
-    const num_no_space = num.replace(/\s+/g, '');
+    const num_no_space = num.replace(/\s+/g, '').replace('(', '').replace(')', '').replace('-', '')
 
     if (num_no_space.length !== 0) {
       if (num_no_space.length < 8) {

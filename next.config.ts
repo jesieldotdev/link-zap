@@ -4,8 +4,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn-icons-png.flaticon.com',
-        pathname: '/**',
+        hostname: '**', // Permite qualquer domínio usando HTTPS
       },
     ],
   },

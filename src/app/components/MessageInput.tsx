@@ -2,24 +2,27 @@
 
 import Image from "next/image";
 import { SetStateAction } from "react";
-import MaskedInput from "react-text-mask";
 
-interface MessageInputProps{
-  num: string
-  setNum: React.Dispatch<SetStateAction<string>>
-  onSend: ()=> void
+interface MessageInputProps {
+  num: string;
+  setNum: React.Dispatch<SetStateAction<string>>;
+  onSend: () => void;
 }
 
 export default function MessageInput({ num, setNum, onSend }: MessageInputProps) {
   return (
     <div className="w-full flex px-2 bg-transparent py-0">
       <div className="flex items-center mt-4 p-2 rounded-full shadow-md m-2 w-full sticky bottom-0 z-10 bg-white">
-        <MaskedInput
-          mask={['(', /[0-9]/, /[0-9]/, ')', ' ', /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/, '-', /[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/]}
+        <input
           placeholder="Digite o número"
           type="text"
           value={num}
           onChange={(e) => setNum(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              onSend();
+            }
+          }}
           className="flex-grow p-2 text-gray-700 rounded-lg focus:outline-none"
         />
         <Image

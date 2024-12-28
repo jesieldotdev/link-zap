@@ -47,7 +47,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen items-center bg-gray-50 bg-cover bg-center" style={{ backgroundImage: "url('https://i.imgur.com/Yh5JpYQ.jpeg')" }}>
+    <div className="flex flex-col h-screen items-center bg-gray-50 bg-cover bg-center" style={{ backgroundImage: "url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')" }}>
       <ChatHeader />
 
       <main className="flex flex-col w-full mt-0 rounded-lg p-4 overflow-y-auto h-full max-h-[75vh]">

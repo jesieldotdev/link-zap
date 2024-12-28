@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ChatHeader() {
   return (
-    <header className="flex items-center bg-green-600 text-white w-full p-2 rounded-lg shadow-md ">
+    <header className="flex items-center bg-white text-zinc-800  w-full p-2  shadow-md ">
       <Image
         src="https://cdn-icons-png.flaticon.com/512/185/185988.png"
         alt="avatar"
@@ -13,8 +13,8 @@ export default function ChatHeader() {
         className="rounded-full ml-2"
       />
       <div className="ml-2">
-        <p className="text-lg font-bold">LINKZAP</p>
-        <p className="text-sm">Desenvolvido pela <span className="font-semibold">JesielLabs</span></p>
+        <p className="text-lg font-medium">LinkZap</p>
+        <p className="text-sm font-light">Desenvolvido pela <span className="font-medium">JesielLabs</span></p>
       </div>
     </header>
   );

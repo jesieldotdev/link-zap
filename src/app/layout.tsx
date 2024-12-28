@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "LINKZAP",
+  title: "Link para WhatsApp",
   description: "Gerador de link de convite para WhatsApp.",
 };
 

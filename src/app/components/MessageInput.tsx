@@ -18,6 +18,11 @@ export default function MessageInput({ num, setNum, onSend }: MessageInputProps)
           type="text"
           value={num}
           onChange={(e) => setNum(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              onSend();
+            }
+          }}
           className="flex-grow p-2 text-gray-700 rounded-lg focus:outline-none"
         />
         <Image
